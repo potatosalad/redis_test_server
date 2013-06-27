@@ -1,0 +1,12 @@
+{application, redis_test_server, [
+    {description, "Test redis using native redis-server."},
+    {vsn, "0.0.1"},
+    {modules, []},
+    {registered, []},
+    {applications, [
+        kernel,
+        stdlib
+    ]},
+    {mod, {redis_test_server_app, []}},
+    {env, []}
+]}.
