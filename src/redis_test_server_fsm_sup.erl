@@ -9,6 +9,8 @@
 -module(redis_test_server_fsm_sup).
 -behaviour(supervisor).
 
+-include("redis_test_server.hrl").
+
 %% API
 -export([start_link/0, start_fsm/3]).
 
@@ -24,8 +26,8 @@
 start_link() ->
     supervisor:start_link({local, ?SUPERVISOR}, ?MODULE, []).
 
-start_fsm(Ref, From, Port) ->
-    supervisor:start_child(?SUPERVISOR, [Ref, From, Port]).
+start_fsm(Ref, From, Config=#config{}) ->
+    supervisor:start_child(?SUPERVISOR, [Ref, From, Config]).
 
 %%%===================================================================
 %%% Supervisor callbacks
