@@ -23,3 +23,4 @@ rel/redis_test_server.tar.bz2
 /log
 /rel/vars/dev*_vars.config
 /.redis_test_server.plt
+/.rebar-test
